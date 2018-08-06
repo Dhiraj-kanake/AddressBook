@@ -29,11 +29,11 @@ public class AddressBook {
 		while (true) {
 			System.out.println("***Address Book***");
 			System.out.println("1.Create New Address Book");
-			if (demo) {
 				System.out.println("2.Print existing Address book");
 				System.out.println("3.Store into database");
-			}
-			System.out.println("4.exit");
+				System.out.println("4.Edit person detail");
+				System.out.println("5. delete person" );
+			System.out.println("6.exit");
 			int choice = utility.inputInteger();
 			switch (choice) {
 			case 1: {
@@ -44,15 +44,24 @@ public class AddressBook {
 			}
 			case 2: {
 				Book book1[] = bookList.get(1);
-				book1[0].printEntry();
+				//book1[0].printBook();
 				break;
 			}
 			case 3: {
 				utility.storeFile(bookList);
-				
-				
+						break;
 			}
-			case 4: {
+			case 4:
+			{
+				utility.editPersonDetail(bookList);
+				break;
+			}
+			case 5:
+			{
+				utility.deletePerson(bookList);
+				break;
+			}
+			case 6: {
 				flag = true;
 				break;
 			}
